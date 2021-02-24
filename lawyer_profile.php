@@ -50,6 +50,7 @@
                 </div>
                 <div class="col-sm-3 mb-5">
                     <input class="celender form-control" type="date" name="day">
+                    <textarea class="form-control MassegeBox"  rows="5" placeholder="Describe." required></textarea>
                     <button class="button">Appointment</button>
                 <?php } ?>
                 </div>

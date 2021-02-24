@@ -1460,10 +1460,9 @@ a:hover, a:active, a:focus {
 
 .button {
     position: absolute;
-    top: 40px;
     right: 0px;
     height: 50px;
-    width: 180px;
+    width: 182px;
     padding: 8px 20px;
     font-size: 15px;
     font-weight: 500;
@@ -1557,4 +1556,10 @@ a:hover, a:active, a:focus {
   height: 20px;
   overflow: auto;
   text-align: justify;
+}
+.MassegeBox{
+    width: 182px;
+    margin: 5px 5px;
+    margin-left: 90px;
+    color: black;
 }
