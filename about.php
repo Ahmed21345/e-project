@@ -26,7 +26,7 @@
                         <div class="about-text">
                             <p>
                                 Kanun is a oline lawyers company who provides you with the best quality and highly experienced lawyers for your problems and cases.
-                                We as Kanun company will solve your any problem within no time and that's how experienced we are. 
+                                We as Kanun company will solve your any problem within no time and that's how experienced we are.
                             </p>
                             <p>
                                 We have a wide range of lawyers and day by day our company is growing as more and more highly experienced lawyers are joining us. we already have huge customer base and this is the right time for you to join if you are lawyer or if not then get yourself helped with our highly experienced lawyers and consultants.

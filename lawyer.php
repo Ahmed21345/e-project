@@ -24,7 +24,7 @@
         $service_id = $_GET['service'];
         $query = $query . " WHERE S.id = " . $service_id;
     }
-    
+
     if (isset($_GET['lawyer'])) {
         $lawyer = $_GET['lawyer'];
         $query = $query . " WHERE U.name LIKE '%" . $lawyer . "%' OR R.name LIKE '%" . $lawyer . "%'";
@@ -45,10 +45,10 @@
                     <h2>Search about for lawyer</h2>
                 </div>
                 <div class="form" id="search">
-                  <form action="lawyer.php" method="GET">
-                    <input class="form-control" placeholder="search Lawyer & Location" value="<?php echo $lawyer?>" name="lawyer">
-                    <button class="btn">Search</button>
-                  </form>
+                    <form action="lawyer.php" method="GET">
+                        <input class="form-control" placeholder="search Lawyer & Location" value="<?php echo $lawyer ?>" name="lawyer">
+                        <button class="btn">Search</button>
+                    </form>
                 </div>
             </div>
         </div>

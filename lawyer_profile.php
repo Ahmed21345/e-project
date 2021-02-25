@@ -48,13 +48,13 @@
                             </p>
                         </div>
                     </div>
-                    <?php if ( empty($_SESSION['user']) || $_SESSION['user']['role'] == 'CUSTOMER') : ?>
+                    <?php if (empty($_SESSION['user']) || $_SESSION['user']['role'] == 'CUSTOMER') : ?>
                         <div class="col-sm-3 mb-5">
-                        <form action="appoinment-post.php" method="POST">
-                            <input class="celender form-control" type="date" name="day">
-                            <input value="<?php echo $lawyer['lawyer_id'] ?>" type="hidden" name="lawyer_id">
-                            <textarea class="form-control MassegeBox" name="detail" rows="5" placeholder="Describe." required></textarea>
-                            <button class="button">Appointment</button>
+                            <form action="appoinment-post.php" method="POST">
+                                <input class="celender form-control" type="date" name="day">
+                                <input value="<?php echo $lawyer['lawyer_id'] ?>" type="hidden" name="lawyer_id">
+                                <textarea class="form-control MassegeBox" name="detail" rows="5" placeholder="Describe." required></textarea>
+                                <button class="button">Appointment</button>
                             </form>
                         </div>
                     <?php endif ?>
