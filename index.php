@@ -71,16 +71,16 @@
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="section-header">
-                            <h2>Learn About Us</h2>
+                            <h2>We Are Kanun</h2>
                         </div>
                         <div class="about-text">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                                Kanun is a oline lawyers company who provides you with the best quality and highly experienced lawyers for your problems and cases.
+                                We as Kanun company will solve your any problem within no time and that's how experienced we are.
                             </p>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+                                We have a wide range of lawyers and day by day our company is growing as more and more highly experienced lawyers are joining us. we already have huge customer base and this is the right time for you to join if you are lawyer or if not then get yourself helped with our highly experienced lawyers and consultants.
                             </p>
-                            <a class="btn" href="">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -96,18 +96,15 @@
                     <h2>Lawyer Services</h2>
                 </div>
                 <div class="row">
-                <?php foreach ($services as $service):?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
-                            <div class="service-icon">
-                            <h3><?php echo $service['name']?></h3>
+                    <?php foreach ($services as $service) : ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <h3><?php echo $service['name'] ?></h3>
+                                </div>
+                                <p class="mt-5"><?php echo $service['detail'] ?></p>
                             </div>
-                            <p class="mt-5">
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non
-                            </p>
-                            <a class="btn" href="">Learn More</a>
                         </div>
-                    </div>
                     <?php endforeach ?>
                 </div>
             </div>
@@ -132,7 +129,7 @@
                             <div class="col-7">
                                 <h3>Best law practices</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                    We have the most highly experienced lawyer with international work experiences as well.
                                 </p>
                             </div>
                         </div>
@@ -145,7 +142,7 @@
                             <div class="col-7">
                                 <h3>Efficiency & Trust</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                    We know how to deal with every problem related to any issues so you can trust on us.
                                 </p>
                             </div>
                         </div>
@@ -158,7 +155,7 @@
                             <div class="col-7">
                                 <h3>Results you deserve</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
+                                    You will surely get the desired results since this is the only aim of our company.
                                 </p>
                             </div>
                         </div>
