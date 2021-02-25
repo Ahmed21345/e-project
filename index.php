@@ -8,6 +8,13 @@
     $database  = new Database();
     $query = "SELECT * FROM services";
     $services = $database->query($query);
+
+    $query = "SELECT U.id AS `id`, U.`name` AS `name`, L.image AS  `image`, S.`name` AS `service_name` 
+                FROM users U
+                JOIN lawyers L ON U.id = L.user_id
+                JOIN services S 
+                ON L.service_id = S.id LIMIT 4";
+    $lawyers = $database->query($query);
     $database->close();
     ?>
 </head>
@@ -98,12 +105,14 @@
                 <div class="row">
                     <?php foreach ($services as $service) : ?>
                         <div class="col-lg-4 col-md-6">
+                        <a href="lawyer.php?service=<?php echo $service['id']; ?>">
                             <div class="service-item">
                                 <div class="service-icon">
                                     <h3><?php echo $service['name'] ?></h3>
                                 </div>
                                 <p class="mt-5"><?php echo $service['detail'] ?></p>
                             </div>
+                        </a>
                         </div>
                     <?php endforeach ?>
                 </div>
@@ -171,85 +180,35 @@
         <!-- Feature End -->
 
 
-        <!-- Team Start -->
-        <div class="team">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Meet Our Expert Lawyers</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Adam Phillips</h2>
-                                <p>Business Consultant</p>
-                                <div class="team-social">
-                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Dylan Adams</h2>
-                                <p>Criminal Consultant</p>
-                                <div class="team-social">
-                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Gloria Edwards</h2>
-                                <p>Divorce Consultant</p>
-                                <div class="team-social">
-                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Josh Dunn</h2>
-                                <p>Immigration Consultant</p>
-                                <div class="team-social">
-                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
+         <!-- Lawyers -->
+         <div class="team">
+                    <div class="container">
+                        <div class="row">
+                            <?php foreach ($lawyers as $lawyer) : ?>
+                                <a href="lawyer_profile.php?lawyer_id=<?php echo $lawyer['id'] ?>">
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="team-item">
+                                            <div class="team-img">
+                                                <img src="img/<?php echo $lawyer['image'] ?>" alt="Team Image">
+                                            </div>
+                                            <div class="team-text">
+                                                <h2> <?php echo $lawyer['name'] ?> </h2>
+                                                <p> <?php echo $lawyer['service_name'] ?> </p>
+                                                <div class="team-social">
+                                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Team End -->
+                <!-- /Lawyers -->
 
         <?php include "layout/footer.php" ?>
 

@@ -6,8 +6,19 @@
     <title>Lawyer-Appointments</title>
     <?php include "layout/header.php";
     if (empty($_SESSION['user']) && !isset($_SESSION['user'])) {
-            header('Location:signin.php');
-        }
+        header('Location:signin.php');
+    }
+
+    $database  = new Database();
+
+    $id = $_GET['lawyer_id'];
+    $lawyerName = $_SESSION['user']['name'];
+    $query = "SELECT A.id AS id, U.name AS `name`, A.date AS `date`, A.description AS `description` FROM `appoinments` A
+                    JOIN `users` U ON U.id = A.user_id         
+                    WHERE A.lawyer_id = $id";
+
+    $appoinments = $database->query($query);
+    $database->close();
     ?>
 
 
@@ -23,37 +34,35 @@
             <table class="table table-hover text-center">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Client Name</th>
-                        <th scope="col">Client Email</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Description</th>
+                        <th scope="col"> Id </th>
+                        <th scope="col"> Client Name </th>
+                        <th scope="col"> Lawyer Name </th>
+                        <th scope="col"> Date </th>
+                        <th scope="col"> Description </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>
-                            <div class="user_describe">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td id="user_description">@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td id="user_description">@mdo</td>
-                    </tr>
+
+
+                    <?php foreach ($appoinments as $appoinment) : ?>
+                        <tr>
+                            <td> <?php echo $appoinment['id'] ?> </td>
+                            <td> <?php echo $appoinment['name'] ?> </td>
+                            <td> <?php echo $lawyerName ?> </td>
+                            <td> <?php echo $appoinment['date'] ?> </td>
+
+                            <td>
+                                <center>
+                                    <div class="user_describe">
+                                        <center>
+                                            <?php echo $appoinment['description'] ?>
+                                        </center>
+                                    </div>
+                                </center>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+
                 </tbody>
             </table>
         </div>
