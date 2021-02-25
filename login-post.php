@@ -13,7 +13,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     if (count($customers) === 1) {
         session_start();
         $_SESSION['user'] = $customers[0];
-        header("Location: index.php");
+
+        if($_SESSION['user']['role'] == 'ADMIN')
+        {
+            header("Location: admin/");
+        }else{
+            header("Location: index.php");
+        }
     } else {
         header('Location: signin.php?err=Incorrect%20your%20email%20OR%20password');
     }

@@ -10,13 +10,28 @@
 <body>
     <div class="wrapper">
 
-        <?php include "layout/nav.php" ?>
+        <?php include "layout/nav.php";
+
+        if (isset($_GET['admin']) && !empty($_GET['admin'])) {
+            $_SESSION['cartItems'] = [];
+            unset($_SESSION["user"]);
+        }
+
+        ?>
+
+
 
         <!-- Login form -->
         <div class="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2 id="loginHead"> User Sign In </h2>
+                    <h2 id="loginHead">
+                        <?php if (isset($_GET['admin']) && !empty($_GET['admin'])) {
+                            echo 'Admin Login';
+                        } else {
+                            echo 'User Sign In';
+                        } ?>
+                    </h2>
                     <!-- Design -->
                     <button onclick="lawyerLogin()" id="loginBtnForLawyer" style="cursor: pointer; text-decoration: underline;" class="text-primary border-0 bg-transparent outline-none">
                         Lawyer Sign In

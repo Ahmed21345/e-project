@@ -24,7 +24,7 @@ $database->close();
                         <div class="footer-link">
                             <h2>Services Areas</h2>
                             <?php foreach ($services as $service) : ?>
-                                <a href=""><?php echo $service['name'] ?></a>
+                                <a href="lawyer.php?service=<?php echo $service['id'] ?>"><?php echo $service['name'] ?></a>
                             <?php endforeach ?>
                         </div>
                     </div>

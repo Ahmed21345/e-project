@@ -105,14 +105,14 @@
                 <div class="row">
                     <?php foreach ($services as $service) : ?>
                         <div class="col-lg-4 col-md-6">
-                        <a href="lawyer.php?service=<?php echo $service['id']; ?>">
-                            <div class="service-item">
-                                <div class="service-icon">
-                                    <h3><?php echo $service['name'] ?></h3>
+                            <a href="lawyer.php?service=<?php echo $service['id']; ?>">
+                                <div class="service-item">
+                                    <div class="service-icon">
+                                        <h3><?php echo $service['name'] ?></h3>
+                                    </div>
+                                    <p class="mt-5"><?php echo $service['detail'] ?></p>
                                 </div>
-                                <p class="mt-5"><?php echo $service['detail'] ?></p>
-                            </div>
-                        </a>
+                            </a>
                         </div>
                     <?php endforeach ?>
                 </div>
@@ -180,35 +180,35 @@
         <!-- Feature End -->
 
 
-         <!-- Lawyers -->
-         <div class="team">
-                    <div class="container">
-                        <div class="row">
-                            <?php foreach ($lawyers as $lawyer) : ?>
-                                <a href="lawyer_profile.php?lawyer_id=<?php echo $lawyer['id'] ?>">
-                                    <div class="col-lg-3 col-md-6">
-                                        <div class="team-item">
-                                            <div class="team-img">
-                                                <img src="img/<?php echo $lawyer['image'] ?>" alt="Team Image">
-                                            </div>
-                                            <div class="team-text">
-                                                <h2> <?php echo $lawyer['name'] ?> </h2>
-                                                <p> <?php echo $lawyer['service_name'] ?> </p>
-                                                <div class="team-social">
-                                                    <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                                    <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                                    <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                                    <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                                </div>
-                                            </div>
+        <!-- Lawyers -->
+        <div class="team">
+            <div class="container">
+                <div class="row">
+                    <?php foreach ($lawyers as $lawyer) : ?>
+                        <a href="lawyer_profile.php?lawyer_id=<?php echo $lawyer['id'] ?>">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="team-item">
+                                    <div class="team-img">
+                                        <img src="img/<?php echo $lawyer['image'] ?>" alt="Team Image">
+                                    </div>
+                                    <div class="team-text">
+                                        <h2> <?php echo $lawyer['name'] ?> </h2>
+                                        <p> <?php echo $lawyer['service_name'] ?> </p>
+                                        <div class="team-social">
+                                            <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                            <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                            <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </div>
-                                </a>
-                            <?php endforeach ?>
-                        </div>
-                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endforeach ?>
                 </div>
-                <!-- /Lawyers -->
+            </div>
+        </div>
+        <!-- /Lawyers -->
 
         <?php include "layout/footer.php" ?>
 

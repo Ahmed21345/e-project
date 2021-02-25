@@ -9,7 +9,7 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
         $detail = $_POST['detail'];
 
         $database = new Database();
-  
+
         $query = "INSERT INTO `appoinments` (`user_id`, `lawyer_id`, `description`, `date`) VALUES ( $user_id, $lawyer_id, '$detail', '$day')";
         $result = $database->insert($query);
 
@@ -17,7 +17,6 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
 
         header("Location: index.php");
     }
-}
-else{
+} else {
     header("Location: signin.php?err=Please%20login%20and%20continue%20again");
 }
