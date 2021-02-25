@@ -22,21 +22,21 @@
                                 <i class="fa fa-map-marker-alt"></i>
                                 <div class="contact-text">
                                     <h2>Location</h2>
-                                    <p>123 Street, New York, USA</p>
+                                    <p>54-Dar-ul-aman Cooperative Housing Society, Baloch Colony Flyour,Shahrah-e-Faisal, Umer Colony, Karachi City, Sindh.</p>
                                 </div>
                             </div>
                             <div class="contact-item">
                                 <i class="fa fa-phone-alt"></i>
                                 <div class="contact-text">
                                     <h2>Phone</h2>
-                                    <p>+012 345 67890</p>
+                                    <p>+92 21659078</p>
                                 </div>
                             </div>
                             <div class="contact-item">
                                 <i class="fa fa-envelope"></i>
                                 <div class="contact-text">
                                     <h2>Email</h2>
-                                    <p>info@example.com</p>
+                                    <p>kanun@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                     <input type="text" class="form-control" placeholder="Subject" required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" style="height: 190px;" placeholder="Message" required="required"></textarea>
+                                    <textarea class="form-control" style="height: 240px;" placeholder="Message" required="required"></textarea>
                                 </div>
                                 <div>
                                     <button class="btn" type="submit">Send Message</button>
@@ -66,9 +66,6 @@
             </div>
         </div>
         <!-- Contact End -->
-
-
-
 
         <?php include "layout/footer.php" ?>
 
