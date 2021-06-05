@@ -111,11 +111,8 @@
                     </div>
                 </div>
                 <!-- /Lawyers -->
-
-
             </div>
         </div>
-    </div>
     </div>
     <!-- Portfolio Start -->
 
